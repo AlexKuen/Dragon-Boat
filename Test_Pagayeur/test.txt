@@ -1,1 +1,2 @@
-
+Ce dossier contient les codes qui ont été crée pour essayer de récupérer la position de la pagaie en temps réels.
+Ces codes permettraient à  une équipe future de pouvoir revenir sur les essais passés et de potentiellement les réutiliser.
