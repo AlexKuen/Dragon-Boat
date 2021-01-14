@@ -53,7 +53,6 @@ tmp = False
 
 
 FacteurVitesse = 0.167  #Conversion Coup de pagaie/minutes > km/heure
-PagayeurABS = 0     #nb de pagayeurs absents
 ReductionPagayeur = 0.05  #réduction de la vitesse par pagayeur absent (10 pagayeur de base)
 ToléranceSyncro = 0.05  #seuil de syncro au dessus duquel on a des malus
 FacteurPerteSyncro = 1  #importance de la syncro
@@ -217,7 +216,7 @@ while True:
 
             ############################# coordination pagayeurs/batteur ###################################
 
-            vitesseFinale = (1/VitBatteur) * 60 * 0.167 * (1-ReductionPagayeur*PagayeurABS)    #vitesse avant changement
+            vitesseFinale = (1/VitBatteur) * 60 * 0.167 * (1-ReductionPagayeur*(11-zMAX))    #vitesse avant changement
 
             # on stocke le moment où le batteur fait un TOP
             if role[notified_socket] == 'b':
@@ -235,7 +234,7 @@ while True:
                     deltaTOT += abs(h - TOP_bat)
                 # utiliser deltaTOT pour calculer la vitesse
                 print("deltaTOP = ", deltaTOT)
-                deltaMoyen = deltaTOT/((zMAX-1)-PagayeurABS)
+                deltaMoyen = deltaTOT/(zMAX-1)
                 decalage = deltaMoyen/VitBatteur
                 if decalage>0.05:
                     vitesseFinale = vitesseFinale*(1-(decalage*FacteurPerteSyncro))
