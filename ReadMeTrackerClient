@@ -1,0 +1,20 @@
+Manuel d'utilisation de tracker.py
+
+++++++ Avant d'utiliser le programme +++++
+
+Pour faire fonctionner l’algorithme, l’utilisateur doit installer python, OpenCV et sa contrib.
++++Python : https://www.python.org/downloads/ 
++++OpenCV + contrib : https://pypi.org/project/opencv-contrib-python/ 
+
+++++++ Pour utiliser le programme +++++
+
+1) Allez dans le dossier où le programme se situe
+2) Tapez dans la barre "cmd" pour ouvrir le console dans l'emplacement du dossier
+3) Tapez "py tracker.py" pour lancer le programme
+4) Décidez le rôle de l'utilisateur 
+5) Tapez "1_p1" pour le pagayeur 1 de l'équipe 1 ou " 2_b1" pour le batteur de l'équipe 2
+6) Une fois la vidéo ouverte, vous pouvez sélectionner la zone de tracking avec la souris
+7) Appuyez sur la touche espace puis q pour valider
+8) Attendez que le serveur envoie start
+
+FINI
