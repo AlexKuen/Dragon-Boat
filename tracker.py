@@ -13,8 +13,8 @@ if __name__ == '__main__' :
 
     HEADER_LENGTH = 10
 
-    IP = "127.0.0.1"
-    PORT = 1234
+    IP = input("adresse IP du serveur : ")
+    PORT = int(input("PORT du serveur : "))
     my_username = input("Username (equipe_role ex: 1_p1): ")
     start = 'n'
     my_role = my_username[2]
