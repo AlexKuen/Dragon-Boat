@@ -1,1 +1,22 @@
+Manuel d'utilisation de trackerCam.py
 
+++++++ Avant d'utiliser le programme +++++
+
+Pour faire fonctionner l’algorithme, l’utilisateur doit installer python, OpenCV et sa contrib.
++++Python : https://www.python.org/downloads/ 
++++OpenCV + contrib : https://pypi.org/project/opencv-contrib-python/ 
+
+++++++ Pour utiliser le programme +++++
+
+1) Allez dans le dossier où le programme se situe
+2) Tapez dans la barre "cmd" pour ouvrir le console dans l'emplacement du dossier
+3) Tapez "py trackerCam.py" pour lancer le programme
+4) Décidez le rôle de l'utilisateur 
+5) Tapez "1_p1" pour le pagayeur 1 de l'équipe 1 ou " 2_b1" pour le batteur de l'équipe 2
+6) Une fois la vidéo ouverte, vous voyer une zone en bleu
+7) Mettez-vous en position pour le pagayeur ou le batteur
+8) Pagayeur : Soyez sûr que la main en bas de la pagaie soit dans le zone
+9) Batteur : Soyez sûr que la main tenant le baton soit dans le zone
+10) Une fois que le compte à rebours est finit, le tracking commence
+
+FINI
