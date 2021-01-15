@@ -1,2 +1,28 @@
 Ce dossier contient les codes qui ont été crée pour essayer de récupérer la position de la pagaie en temps réels.
 Ces codes permettraient à  une équipe future de pouvoir revenir sur les essais passés et de potentiellement les réutiliser.
+
+Les librairies opencv et numpy sont necessaires au bon fonctionnement des 4 programmes.
+Chacun de ses codes peuvent utiliser des vidéos ou la webcam de l'ordinateur, il suffit de remplacer le contenu de cv2.VideoCapture() par "nom_de_video" pour utiliser une vidéo ou 0 pour utiliser la webcam.
+
+----color_detection.py----
+Ce programme permet la détection de la couleur rouge. Si deux zones de couleurs sont détectées (deux scotch), une ligne sera créée entre ces deux points pour simuler la pagaie.
+
+----detection_movement.py----
+Ce code avait pour but de détecter tous les mouvement lors d'un pagayage et de seulement garder le mouvement de la pagaie.
+Il affichera trois fenêtres:
+    frame   : cette fenêtre affichera la vidéo avec chaque zone de mouvement encadrée en rouge.
+              Elle affichera aussi les valeur des variables "seuil" permettant de changer la détection des mouvements plus ou moins grand, "blur" flouttant la deuxième fenêtre                   mask
+              permettant un lissage des zones de détection de mouvment et "surface" limitant la taille minimale de zone de mouvment détectée.
+    mask    : Cette fenêtre affiche en noir et blanc les mouvement detectés. Les zones de déplacements pourront être lissé en faisant varier "blur", chaque cadre rouge dans la                   fenêtre "frame" sont déterminé a partir de chacune des zones blanches détectées.
+    contour : Comme pour "frame", "contour" affichera les zones de mouvement détecté dans "mask", mais seulement en affichant les bords de la zone de contour en vert.
+    
+----test_homography_frame_frame.py----
+Ce code permet la détection des zones d'interêts en utilisant la fonction ORB (ORiented FAST and Rotated BRIEF) fusionnant le détecteur de points FAST et le descripteur BRIEF.
+Ce code fera une détection de tous les points d'interêts commun entre deux frame se suivant. Quand des points sont détectés comme appartenant au deux frame, il y aura deux résultant possible:
+  Si leur position sont la même, ce point sera considéré comme immobile, si un point de même coordonnée sera détecté, il ne sera pas gardé en mémoire.
+  Si leur position sont différentes, le point est consédéré en moouvement et sera affiché à l'écran.
+  
+----test_homography_video_image.py----
+Ce code aura un fonctionnement similaire au précédant. Au lieu de faire une vérification frame par frame, ce code permettra la détection d'une image/paterne au cours de la vidéo.
+Il faudra pour cela renseigner une image dans le code pour pouvoir l'utiliser.
+Il y aura ensuite une détection entre les points spécifique à chaque frame de la vidéo, avec ceux de la photos enregistrée.
