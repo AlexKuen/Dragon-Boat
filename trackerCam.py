@@ -1,4 +1,3 @@
-
 import cv2
 import numpy as np
 import sys
@@ -14,7 +13,7 @@ if __name__ == '__main__' :
 
     HEADER_LENGTH = 10
 
-    IP = "127.0.0.1"
+    IP = "192.168.43.134"
     PORT = 1234
     my_username = input("Username (equipe_role ex: 1_p1): ")
     start = 'n'
@@ -83,7 +82,7 @@ if __name__ == '__main__' :
     #video = cv2.VideoCapture("drap4.mp4")
 
     # Read paddle picture
-    src1 = cv2.imread(cv2.samples.findFile("paggai.png") )
+    #src1 = cv2.imread(cv2.samples.findFile("paggai.png") )
 
     # used to record the time when we processed last frame 
     prev_frame_time = 0
@@ -155,8 +154,6 @@ if __name__ == '__main__' :
         
         #timer
         if time.time() - start_time <= t:
-            src1 = cv2.resize(src1,(width, height))
-            cv2.addWeighted( src1, 0.5, frame, 0.5, 0.0, frame);
             for box in bboxes:
                 (x, y, w, h) = [int(v) for v in box]
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
@@ -188,6 +185,17 @@ if __name__ == '__main__' :
                 tmp = receive_message(client_socket)
                 if tmp != False:
                     start = tmp['data'].decode('utf-8')  
+                    print("5")
+                    time.sleep(1)
+                    print("4")
+                    time.sleep(1)
+                    print("3")
+                    time.sleep(1)
+                    print("2")
+                    time.sleep(1)
+                    print("1")
+                    time.sleep(1)
+                    print("PARTEZ!")
 
 
         # time when we finish processing for this frame 
