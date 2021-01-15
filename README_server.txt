@@ -12,6 +12,6 @@ https://www.futura-sciences.com/tech/questions-reponses/informatique-trouver-adr
 - indiquer le nombre de personne dns le bateau
 - indiquer la distance à parcourir pour finir la course
 - attendre que tout le monde se connecte
-- écrire y à la question start pour commencer la course
+- écrire y à la question start plusieurs fois (pour cause de bug) pour commencer la course
 - la course est lancée, attendez la fin
 
